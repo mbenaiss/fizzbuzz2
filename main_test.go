@@ -1,11 +1,15 @@
 package main
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/mbenaiss/fizzbuzz/internal/fizzbuzz"
+)
 
 func TestParseQuery(t *testing.T) {
 	tt := []struct {
 		query    map[string][]string
-		expected FizzBuzz
+		expected fizzbuzz.FizzBuzz
 	}{
 		{
 			query:    map[string][]string{},
