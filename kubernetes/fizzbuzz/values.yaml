@@ -1,0 +1,3 @@
+appName : "fizzbuzz"
+replicaCount : 1
+version: latest
