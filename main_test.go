@@ -13,7 +13,7 @@ func TestParseQuery(t *testing.T) {
 	}{
 		{
 			query:    map[string][]string{},
-			expected: FizzBuzz{},
+			expected: fizzbuzz.FizzBuzz{},
 		},
 		{
 			query: map[string][]string{
@@ -23,12 +23,12 @@ func TestParseQuery(t *testing.T) {
 				"str1":  []string{"fizz"},
 				"str2":  []string{"buzz"},
 			},
-			expected: FizzBuzz{
-				n1:    3,
-				n2:    5,
-				limit: 15,
-				str1:  "fizz",
-				str2:  "buzz",
+			expected: fizzbuzz.FizzBuzz{
+				N1:    3,
+				N2:    5,
+				Limit: 15,
+				Str1:  "fizz",
+				Str2:  "buzz",
 			},
 		},
 	}

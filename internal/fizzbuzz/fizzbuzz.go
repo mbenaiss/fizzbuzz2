@@ -3,8 +3,11 @@ package fizzbuzz
 import "strconv"
 
 type FizzBuzz struct {
-	N1, N2, Limit int
-	Str1, Str2    string
+	N1    int    `json:"n1"`
+	N2    int    `json:"n2"`
+	Limit int    `json:"limit"`
+	Str1  string `json:"str1"`
+	Str2  string `json:"str2"`
 }
 
 func Get(f FizzBuzz) []string {
