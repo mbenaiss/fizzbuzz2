@@ -1,7 +1,8 @@
-FROM golang:1.14.0-alpine3.11 as build-stage
+FROM golang:alpine3.11 as build-stage
+RUN apk add build-base
 WORKDIR /project
 COPY . .
-RUN CGO_ENABLED=0 GOOS=linux go build -ldflags "-s -w" -o server main.go
+RUN GOOS=linux CGO_ENABLED=1 go build -mod vendor -ldflags "-s -w" -o server cmd/main.go
 
 FROM alpine:3.11.3
 WORKDIR /project

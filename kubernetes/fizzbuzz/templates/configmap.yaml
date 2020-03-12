@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Values.appName }}-env
+  namespace: default
+data:
+  PORT: "8000"
+  DB: "./stats"

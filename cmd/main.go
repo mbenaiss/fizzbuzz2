@@ -20,7 +20,10 @@ func main() {
 		log.Fatalf("unable to initialize database %+v", err)
 	}
 	mux := http.NewServeMux()
-	mux.Handle("/stats/", statsEndpoint(rep))
+	mux.HandleFunc("/healthz", func(w http.ResponseWriter, r *http.Request) {
+		w.WriteHeader(http.StatusOK)
+	})
+	mux.Handle("/stats", statsEndpoint(rep))
 	mux.Handle("/", fizzbuzzEndpoint(rep))
 
 	log.Printf("http listening port %s", port)
